@@ -314,6 +314,12 @@ public class RNCWebViewManager extends ViewGroupManager<RNCWebViewWrapper>
     }
 
     @Override
+    @ReactProp(name = "source")
+    public void setSource(RNCWebViewWrapper view, @Nullable ReadableMap value) {
+        mRNCWebViewManagerImpl.setSource(view, value);
+    }
+
+    @Override
     @ReactProp(name = "textZoom")
     public void setTextZoom(RNCWebViewWrapper view, int value) {
         mRNCWebViewManagerImpl.setTextZoom(view, value);

@@ -290,6 +290,15 @@ export interface NativeProps extends ViewProps {
     html?: string;
     baseUrl?: string;
   }>;
+  source: Readonly<{
+    uri?: string;
+    method?: string;
+    body?: string;
+
+    headers?: ReadonlyArray<Readonly<{ name: string; value: string }>>;
+    html?: string;
+    baseUrl?: string;
+  }>;
   userAgent?: string;
   injectedJavaScriptObject?: string;
 }

@@ -244,7 +244,7 @@ auto stringToOnLoadingFinishNavigationTypeEnum(std::string value) {
                 webViewEventEmitter->onHttpError(data);
             }
         };
-        self.contentView = _view;
+        [self addSubview:_view];
     }
     return self;
 }
@@ -486,6 +486,12 @@ auto stringToOnLoadingFinishNavigationTypeEnum(std::string value) {
     [_view setSource:source];
     
     [super updateProps:props oldProps:oldProps];
+}
+
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    _view.frame = self.bounds;
 }
 
 - (void)handleCommand:(nonnull const NSString *)commandName args:(nonnull const NSArray *)args {

@@ -276,7 +276,7 @@ const WebViewComponent = forwardRef<{}, IOSWebViewProps>(
         style={webViewStyles}
         hasOnFileDownload={!!onFileDownload}
         ref={webViewRef}
-        // @ts-expect-error old arch only
+        // @ts-ignore source is old arch
         source={sourceResolved}
         {...nativeConfig?.props}
       />

@@ -194,8 +194,10 @@ const WebViewComponent = forwardRef<{}, MacOSWebViewProps>(
 
     const webView = (
       <NativeWebView
-        key="webViewKey"
         {...otherProps}
+        key="webViewKey"
+        messagingModuleName="WebView"
+        injectedJavaScriptObject=""
         javaScriptEnabled={javaScriptEnabled}
         cacheEnabled={cacheEnabled}
         useSharedProcessPool={useSharedProcessPool}
@@ -221,7 +223,7 @@ const WebViewComponent = forwardRef<{}, MacOSWebViewProps>(
         incognito={incognito}
         mediaPlaybackRequiresUserAction={mediaPlaybackRequiresUserAction}
         ref={webViewRef}
-        // @ts-expect-error old arch only
+        // @ts-ignore source is old arch
         source={sourceResolved}
         style={webViewStyles}
         {...nativeConfig?.props}
